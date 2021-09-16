@@ -16,13 +16,13 @@ def processImages(data):
 
     for row in data:
         lines = lines + 1
-        if re.search(r".jpg", row[0]):
+        if re.search(r".jpg", row[0], re.IGNORECASE):
             jpg += 1
 
-        elif re.search(r".gif", row[0]):
+        elif re.search(r".gif", row[0], re.IGNORECASE):
             gif += 1
 
-        elif re.search(r".png", row[0]):
+        elif re.search(r".png", row[0], re.IGNORECASE):
             png += 1
 
             
@@ -36,13 +36,13 @@ def processBrowsers(data):
     ie = 0
     safari = 0
     for row in data:
-        if re.search(r"Firefox", row[2], re.IGNORECASE):
+        if re.search(r"Firefox", row[2]):
             ff += 1
-        if re.search(r"Chrome", row[2], re.IGNORECASE):
+        if re.search(r"Chrome", row[2]):
             chrome += 1
-        if re.search(r"Trident", row[2], re.IGNORECASE):
+        if re.search(r"Trident", row[2]):
             ie += 1
-        if re.search(r"AppleWebkit", row[2], re.IGNORECASE):
+        if re.search(r"AppleWebkit", row[2]):
             safari += 1
 
     return max(ff, chrome, ie, safari)
