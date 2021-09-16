@@ -16,13 +16,13 @@ def processImages(data):
 
     for row in data:
         lines = lines + 1
-        if re.search(r".jpg", row[0], re.IGNORECASE):
+        if re.search(r".jpg", row[0]):
             jpg += 1
 
-        elif re.search(r".gif", row[0], re.IGNORECASE):
+        elif re.search(r".gif", row[0]):
             gif += 1
 
-        elif re.search(r".png", row[0], re.IGNORECASE):
+        elif re.search(r".png", row[0]):
             png += 1
 
             
